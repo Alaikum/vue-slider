@@ -36,7 +36,20 @@
             </p>
           </div>
 
+          <div class="circles">
+            <p class="circles__dot" v-for="(element,i) in slides"
+             :data-id="[i]"
+             @click="stampa()">
+            </p>
+            <!-- <p class="circles__dot circle__active"></p>
+            <p class="circles__dot" ></p>
+            <p class="circles__dot" ></p>
+            <p class="circles__dot"></p>
+            <p class="circles__dot"></p> -->
+          </div>
         </div>
+
+      
 
       </div>
     </div>

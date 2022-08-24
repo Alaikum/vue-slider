@@ -27,6 +27,11 @@ const app = new Vue({
 			if (this.contatore === -1) { this.contatore = 4 }
 			
 		},
+		stampa(){
+			console.log(this)
+			console.log(this.contatore)
+
+		},
 	},
 })
 
