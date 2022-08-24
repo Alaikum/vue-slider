@@ -9,17 +9,25 @@ const slides = [
 ]
 
 
-const app= new Vue({
-    el:'#root',
-    data:{
-        slides,
+const app = new Vue({
+	el: '#root',
+	data: {
+		slides,
 		contatore: 0,
-    },
-    methods:{
-        toUpper(text){
-            return text.toUpperCase()
-        },
-    },
+	},
+	methods: {
+		next() {
+			// console.log(this.contatore)
+			this.contatore++
+			if (this.contatore === 5) { this.contatore = 0 }
+			
+		},
+		prev() {
+			this.contatore--
+			if (this.contatore === -1) { this.contatore = 4 }
+			
+		},
+	},
 })
 
 
