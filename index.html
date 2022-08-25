@@ -38,8 +38,9 @@
 
           <div class="circles">
             <p class="circles__dot" v-for="(element,i) in slides"
-             :data-id="[i]"
-             @click="stampa()">
+             :data-id="i"
+             @click="circles($event)"
+             :class=" cerchioAttivo(i)" >
             </p>
             <!-- <p class="circles__dot circle__active"></p>
             <p class="circles__dot" ></p>

@@ -14,26 +14,64 @@ const app = new Vue({
 	data: {
 		slides,
 		contatore: 0,
+		classeCerchio: '',
+		contatoreCerchio: 0,
+
 	},
 	methods: {
 		next() {
 			// console.log(this.contatore)
 			this.contatore++
 			if (this.contatore === 5) { this.contatore = 0 }
-			
+
 		},
 		prev() {
 			this.contatore--
 			if (this.contatore === -1) { this.contatore = 4 }
-			
+
 		},
-		stampa(){
-			console.log(this)
+		circles(event) {
+
+			console.log(event.target.dataset.id)
 			console.log(this.contatore)
+			this.contatore = event.target.dataset.id
+
+
+
+			// const contPall= document.querySelector('[data-id="i"]');
+
+
 
 		},
+		cerchioAttivo(i) {
+
+			
+
+			if (i === this.contatoreCerchio) {
+				this.classeCerchio = 'circle__active'
+
+			} 
+
+
+			return (this.classeCerchio)
+		},
+
+		autoPlay: function () {
+            var slide = this;
+            console.log(this.contatore)
+            // console.log(time)
+            setInterval(function () {
+                // time.localTime = new Date().toLocaleTimeString();
+               slide.contatore++
+               if (slide.contatore === 5) { slide.contatore = 0 }
+            }, 1000);
+        },
+
 	},
-})
 
 
-console.log(app)
+	mounted() {
+        this.autoPlay()
+    }
+});
+
